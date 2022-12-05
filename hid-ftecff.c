@@ -1182,7 +1182,7 @@ int ftecff_init(struct hid_device *hdev) {
 	CREATE_SYSFS_FILE(wheel_id)
 	
 
-	if (hdev->product == CSL_ELITE_WHEELBASE_DEVICE_ID || hdev->product == CSL_ELITE_PS4_WHEELBASE_DEVICE_ID) {
+	if (hdev->product == CSL_ELITE_WHEELBASE_DEVICE_ID || hdev->product == CSL_ELITE_PS4_WHEELBASE_DEVICE_ID || hdev->product == PORSCHE_911_GT3_RS_V2_DEVICE_ID) {
 		CREATE_SYSFS_FILE(RESET)
 		CREATE_SYSFS_FILE(SLOT)
 		CREATE_SYSFS_FILE(SEN)
@@ -1225,7 +1225,7 @@ void ftecff_remove(struct hid_device *hdev)
 	device_remove_file(&hdev->dev, &dev_attr_range);
 	device_remove_file(&hdev->dev, &dev_attr_wheel_id);
 
-	if (hdev->product == CSL_ELITE_WHEELBASE_DEVICE_ID || hdev->product == CSL_ELITE_PS4_WHEELBASE_DEVICE_ID) {
+	if (hdev->product == CSL_ELITE_WHEELBASE_DEVICE_ID || hdev->product == CSL_ELITE_PS4_WHEELBASE_DEVICE_ID || hdev->product == PORSCHE_911_GT3_RS_V2_DEVICE_ID) {
 		device_remove_file(&hdev->dev, &dev_attr_RESET);
 		device_remove_file(&hdev->dev, &dev_attr_SLOT);
 		device_remove_file(&hdev->dev, &dev_attr_SEN);
